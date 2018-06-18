@@ -26,8 +26,8 @@
 
         <div class="row form-group">
 
-                <span for="selectValor">Uno de los jugadores debe elegir una de las siguentes opciones. La opcion no seleccionada se asignara automaticamente
-                        al otro jugador.</span>
+                <span for="selectValor">Elige un lado de la moneda, el lado que no sea selecionado se 
+                    asignara automaticamente a la computadora.</span>
             <select class="form-control" id="selectValor">
                 <option value="true">Sellos</option>
                 <option value="false">Aguilas</option>
@@ -37,15 +37,17 @@
         <main class="row animated bounceInLeft">
 
             <div class="row" v-bind:style="{ color: activeColor, fontSize: fontSize + 'px',}">
-                <div class="col-6">
+                <div class="col-4">
                     <div>
-                        <img :src="src1" height="200px" width="200px" /> {{ message1 }}
+                        <img :src="src1" height="150px" width="150px" /> {{ message1 }}
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-4" ></div>
+
+                <div class="col-4">
                     <div>
-                        <img :src="src2" height="200px" width="200px" /> {{ message2 }}
+                        <img :src="src2" height="150px" width="150px" /> {{ message2 }}
                     </div>
                 </div>
             </div>
@@ -53,10 +55,6 @@
             <ul>
                 <li>
                     <button @click="moneda1" class="btn btn-info">Lanzar</button>
-                </li>
-                <br>
-                <li>
-                    <button @click="moneda1" class="btn btn-info">Reiniciar</button>
                 </li>
             </ul>
         </main>
