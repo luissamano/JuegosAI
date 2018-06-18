@@ -3,9 +3,8 @@ var app = new Vue({
     data: {
         activeColor: 'Green',
         fontSize: 30,
-        message1: '',
+        message: '',
         src1: '',
-        message2: '',
         src2: ''
     },
     methods: {
@@ -23,34 +22,32 @@ var app = new Vue({
 
             if (x === true && y === true) {
                 console.log(x,y);
-                this.message1 = cara;
-                this.src1 = se;               
-                this.message2 = cara;
+                this.message = cara+ ' - ' +cara;
+                this.src1 = se;        
                 this.src2 = se; 
                 var toastHTML = '<span>Gana 1</span>';
             } else if (x === false  && y === false) {
                 console.log(x,y);
-                this.message1 = cruz;
+                this.message = cruz+ ' - ' +cruz;
                 this.src1 = ag;
-                this.message2 = cruz;
                 this.src2 = ag;
                 var toastHTML = '<span>Gana 2</span>';
             }
             else {
                 console.log(x,y);
-                var toastHTML = '<span>Empate, lanza de nuevo</span>';   
+                var toastHTML = '<span>Empate</span>';   
                 if (x === true) {
-                    this.message1 = cara;
+                    this.message = cara;
                     this.src1 = se;
                 } else {
-                    this.message1 = cruz;
+                    this.message = cruz;
                     this.src1 = ag;
                 }
                 if (y === true) {
-                    this.message2 = cara;
+                    this.message = cara;
                     this.src2 = se;
                 } else {
-                    this.message2 = cruz;
+                    this.message = cruz;
                     this.src2 = ag;
                 }
             }
